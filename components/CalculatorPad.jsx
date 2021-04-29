@@ -62,147 +62,153 @@ const Pad = () => {
   const blackTextBtn = '#000000';
 
   return (
-    <View style={styles.gridContainer}>
-      <DisplayPad
-        operator={operator}
-        initial={initialValue}
-        current={currentValue}></DisplayPad>
-      <View style={styles.deleteColumns}>
-        <Button
-          color={blackTextBtn}
-          title="AC"
-          style={styles.numbers}
-          onPress={clear}></Button>
-        <Button
-          color={blackTextBtn}
-          title="Del"
-          style={styles.numbers}
-          onPress={handleDelete}></Button>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.gridContainer}>
+        <DisplayPad
+          operator={operator}
+          initial={initialValue}
+          current={currentValue}></DisplayPad>
+        <View style={styles.deleteColumns}>
+          <Button
+            color={blackTextBtn}
+            title="AC"
+            style={styles.numbers}
+            onPress={clear}></Button>
+          <Button
+            color={blackTextBtn}
+            title="Del"
+            style={styles.numbers}
+            onPress={handleDelete}></Button>
+        </View>
+        <View style={styles.columns}>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="1"
+              onPress={() => handleOnPress('1')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="2"
+              style={styles.numbers}
+              onPress={() => handleOnPress('2')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="3"
+              style={styles.numbers}
+              onPress={() => handleOnPress('3')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="÷"
+              style={styles.operators}
+              onPress={() => handleOperator('÷')}></Button>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.columns}>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="4"
+              style={styles.numbers}
+              onPress={() => handleOnPress('4')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="5"
+              style={styles.numbers}
+              onPress={() => handleOnPress('5')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="6"
+              style={styles.numbers}
+              onPress={() => handleOnPress('6')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="*"
+              style={styles.numbers}
+              onPress={() => handleOperator('*')}></Button>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.columns}>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="7"
+              style={styles.numbers}
+              onPress={() => handleOnPress('7')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              title="8"
+              color={blackTextBtn}
+              style={styles.numbers}
+              onPress={() => handleOnPress('8')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              title="9"
+              color={blackTextBtn}
+              style={styles.numbers}
+              onPress={() => handleOnPress('9')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="-"
+              style={styles.numbers}
+              onPress={() => handleOperator('-')}></Button>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.columns}>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="."
+              style={styles.numbers}
+              onPress={() => handleOnPress('.')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="0"
+              style={styles.numbers}
+              onPress={() => handleOnPress('0')}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              title="="
+              color={blackTextBtn}
+              style={styles.numbers}
+              onPress={() => calculation(operator)}></Button>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numbers}>
+            <Button
+              color={blackTextBtn}
+              title="+"
+              style={styles.numbers}
+              onPress={() => handleOperator('+')}></Button>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.columns}>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="1"
-            onPress={() => handleOnPress('1')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="2"
-            style={styles.numbers}
-            onPress={() => handleOnPress('2')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="3"
-            style={styles.numbers}
-            onPress={() => handleOnPress('3')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="÷"
-            style={styles.operators}
-            onPress={() => handleOperator('÷')}></Button>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.columns}>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="4"
-            style={styles.numbers}
-            onPress={() => handleOnPress('4')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="5"
-            style={styles.numbers}
-            onPress={() => handleOnPress('5')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="6"
-            style={styles.numbers}
-            onPress={() => handleOnPress('6')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="*"
-            style={styles.numbers}
-            onPress={() => handleOperator('*')}></Button>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.columns}>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="7"
-            style={styles.numbers}
-            onPress={() => handleOnPress('7')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            title="8"
-            color={blackTextBtn}
-            style={styles.numbers}
-            onPress={() => handleOnPress('8')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            title="9"
-            color={blackTextBtn}
-            style={styles.numbers}
-            onPress={() => handleOnPress('9')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="-"
-            style={styles.numbers}
-            onPress={() => handleOperator('-')}></Button>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.columns}>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="."
-            style={styles.numbers}
-            onPress={() => handleOnPress('.')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="0"
-            style={styles.numbers}
-            onPress={() => handleOnPress('0')}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            title="="
-            color={blackTextBtn}
-            style={styles.numbers}
-            onPress={() => calculation(operator)}></Button>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.numbers}>
-          <Button
-            color={blackTextBtn}
-            title="+"
-            style={styles.numbers}
-            onPress={() => handleOperator('+')}></Button>
-        </TouchableOpacity>
-      </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   gridContainer: {
     display: 'flex',
     justifyContent: 'center',

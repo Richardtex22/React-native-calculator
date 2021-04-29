@@ -7,22 +7,10 @@
  */
 
 import React from 'react';
-import {StyleSheet, SafeAreaView} from 'react-native';
 import Pad from './components/CalculatorPad';
 
 const App = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Pad></Pad>
-    </SafeAreaView>
-  );
+  return <Pad></Pad>;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-});
 
 export default App;
